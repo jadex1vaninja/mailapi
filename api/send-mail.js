@@ -1,21 +1,26 @@
 const nodemailer = require("nodemailer");
 
 module.exports = (req, res) => {
-
+    const from = "dazn@jadexconsulting.com";
+    const pass = process.env.pass;
      const {
        query: { name,surname, email },
      } = req;
+
+     if(!email) return res.json({
+       error: "Email is required",
+     });
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "dazn@jadexconsulting.com",
-      pass: "U3A5yk2zMyu8ZS",
+      user: from,
+      pass: pass,
     },
   });
 
   const mailOptions = {
-    from: "dazn@jadexconsulting.com",
-    to: "wanyaka1@gmail.com",
+    from: from,
+    to: "info@daznboxing.io",
     subject: `NFT`,
     text: `${name} ${surname} ${email}`,
   };
