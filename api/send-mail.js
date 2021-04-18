@@ -3,6 +3,7 @@ const nodemailer = require("nodemailer");
 module.exports = (req, res) => {
     const from = "dazn@jadexconsulting.com";
     const pass = process.env.pass;
+    const to = "daznboxing@jadexconsulting.com";
      const {
        query: { name,surname, email },
      } = req;
@@ -20,7 +21,7 @@ module.exports = (req, res) => {
 
   const mailOptions = {
     from: from,
-    to: "info@daznboxing.io",
+    to: to,
     subject: `NFT`,
     text: `${name} ${surname} ${email}`,
   };
