@@ -20,14 +20,12 @@ module.exports = (req, res) => {
       pass: pass,
     },
   });
-
+  const text = receiveMessages === "true" ?  "YES": "NO"
   const mailOptions = {
     from: from,
     to: to,
     subject: `NFT`,
-    text: `${name} ${surname} ${email}, Subscribe to newsletter: ${
-      receiveMessages ? "YES" : "NO"
-    } `,
+    text: `${name} ${surname} ${email}, Subscribe to newsletter: ${text}`,
   };
 
   transporter.sendMail(mailOptions, function (error, info) {
