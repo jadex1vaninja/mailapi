@@ -4,6 +4,8 @@ module.exports = (req, res) => {
     const from = "dazn@jadexconsulting.com";
     const pass = process.env.pass;
     const to = "daznboxing@jadexconsulting.com";
+
+    console.log("test")
      const {
        query: { name,surname, email,receiveMessages },
      } = req;
