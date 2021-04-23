@@ -25,7 +25,9 @@ module.exports = (req, res) => {
     from: from,
     to: to,
     subject: `NFT`,
-    text: `${name} ${surname} ${email}, Subscribe to newsletter: ${receiveMessages} ? 'YES': NO`,
+    text: `${name} ${surname} ${email}, Subscribe to newsletter: ${
+      receiveMessages ? "YES" : "NO"
+    } `,
   };
 
   transporter.sendMail(mailOptions, function (error, info) {
