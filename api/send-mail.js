@@ -5,7 +5,7 @@ module.exports = (req, res) => {
     const pass = process.env.pass;
     const to = "daznboxing@jadexconsulting.com";
      const {
-       query: { name,surname, email },
+       query: { name,surname, email,receiveMessages },
      } = req;
 
      if(!email) return res.json({
@@ -23,7 +23,7 @@ module.exports = (req, res) => {
     from: from,
     to: to,
     subject: `NFT`,
-    text: `${name} ${surname} ${email}`,
+    text: `${name} ${surname} ${email}, Subscribe to newsletter: ${receiveMessages} ? 'YES': NO`,
   };
 
   transporter.sendMail(mailOptions, function (error, info) {
