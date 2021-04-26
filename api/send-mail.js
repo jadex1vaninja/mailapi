@@ -20,7 +20,7 @@ module.exports = (req, res) => {
       pass: pass,
     },
   });
-  const text = receiveMessages === "true" ?  "YES": "NO"
+  const text = !receiveMessages === "true" ?  "YES": "NO"
   const mailOptions = {
     from: from,
     to: to,
