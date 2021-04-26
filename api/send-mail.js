@@ -3,7 +3,7 @@ const nodemailer = require("nodemailer");
 module.exports = (req, res) => {
     const from = "dazn@jadexconsulting.com";
     const pass = process.env.pass;
-    const to = ["daznboxing@jadexconsulting.com", "competitions@dazn.com"];
+    const to = ["daznboxing@jadexconsulting.com", "dazncompetitions@dazn.com"];
 
     console.log("test")
      const {
