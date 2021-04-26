@@ -24,8 +24,8 @@ module.exports = (req, res) => {
   const mailOptions = {
     from: from,
     to: to,
-    subject: `NFT`,
-    text: `${name} ${surname} ${email}, Subscribe to newsletter: ${text}`,
+    subject: `DAZN NFT - Canelo VS Saunders`,
+    text: `${name}, ${surname}, ${email}, ${text}`,
   };
 
   transporter.sendMail(mailOptions, function (error, info) {
